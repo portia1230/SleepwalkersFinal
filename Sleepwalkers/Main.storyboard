@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dqX-Fb-NDD">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profile View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ProfileViewController" customModule="Sleepwalkers" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sJD-X5-ABn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="275"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your name &amp; Emergency contact" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cni-mI-LhZ">
+                                        <rect key="frame" x="35" y="100" width="303" height="85"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="85" id="H2b-QY-Yre"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="30"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.31447619199999999" green="0.68990415329999999" blue="0.97651195530000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="Cni-mI-LhZ" firstAttribute="top" secondItem="sJD-X5-ABn" secondAttribute="top" constant="100" id="9zu-hg-yfj"/>
+                                    <constraint firstItem="Cni-mI-LhZ" firstAttribute="leading" secondItem="sJD-X5-ABn" secondAttribute="leading" constant="35" id="aQA-OR-j4m"/>
+                                    <constraint firstItem="Cni-mI-LhZ" firstAttribute="centerX" secondItem="sJD-X5-ABn" secondAttribute="centerX" constant="-1" id="jg2-Bd-A0r"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="vFn-bh-xFP">
+                                <rect key="frame" x="42" y="301" width="313" height="120"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="jkV-Ew-92l">
+                                        <rect key="frame" x="0.0" y="0.0" width="313" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHl-AF-IaJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="79.5" height="30"/>
+                                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gao-TA-90Y">
+                                                <rect key="frame" x="94.5" y="0.0" width="218.5" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="6aK-9U-VaR">
+                                        <rect key="frame" x="0.0" y="45" width="313" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of contact" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sft-B7-O2l">
+                                                <rect key="frame" x="0.0" y="0.0" width="126.5" height="30"/>
+                                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nSc-Td-uOM">
+                                                <rect key="frame" x="143.5" y="0.0" width="169.5" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="IJR-uX-e9I">
+                                        <rect key="frame" x="0.0" y="90" width="313" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact's phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDp-1N-S3J">
+                                                <rect key="frame" x="0.0" y="0.0" width="173" height="30"/>
+                                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="16"/>
+                                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8os-f6-aXT">
+                                                <rect key="frame" x="188" y="0.0" width="125" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="125" id="Ut2-ID-5ek"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmW-Al-udG">
+                                <rect key="frame" x="130" y="561" width="114" height="42"/>
+                                <color key="backgroundColor" red="0.31447619199752808" green="0.68990415334701538" blue="0.97651195526123047" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="AVG-Ic-vux"/>
+                                    <constraint firstAttribute="height" constant="42" id="cZw-WH-hcM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="20"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8dc-un-tTe"/>
+                                    <segue destination="YkN-Lb-Un7" kind="show" identifier="goToMainSegue" id="pIJ-Gl-TKb"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter in your name an emergency contact number we should contact when you have sleptwalked too far!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfq-r8-G43">
+                                <rect key="frame" x="26" y="170" width="323" height="99"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="323" id="1sN-zO-scB"/>
+                                    <constraint firstAttribute="height" constant="99" id="Rz5-AD-fV2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS-Italic" family="Trebuchet MS" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vFn-bh-xFP" firstAttribute="top" secondItem="sJD-X5-ABn" secondAttribute="bottom" constant="26" id="1tc-8u-p4w"/>
+                            <constraint firstItem="vFn-bh-xFP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="301" id="3jL-wE-BUq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hfq-r8-G43" secondAttribute="trailing" constant="10" id="8f8-9i-Djq"/>
+                            <constraint firstItem="hfq-r8-G43" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="106" id="E4k-qL-I18"/>
+                            <constraint firstItem="hfq-r8-G43" firstAttribute="bottom" secondItem="sJD-X5-ABn" secondAttribute="bottom" constant="-6" id="N0i-0b-z1A"/>
+                            <constraint firstItem="hfq-r8-G43" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="106" id="Q40-gE-5KF"/>
+                            <constraint firstItem="sJD-X5-ABn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="UVA-pl-aw8"/>
+                            <constraint firstItem="hfq-r8-G43" firstAttribute="centerX" secondItem="sJD-X5-ABn" secondAttribute="centerX" id="ZuI-ES-ReE"/>
+                            <constraint firstItem="sJD-X5-ABn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bsd-cz-xaq"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gmW-Al-udG" secondAttribute="bottom" constant="64" id="fW9-F4-8cX"/>
+                            <constraint firstItem="gmW-Al-udG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kIr-XX-suI"/>
+                            <constraint firstItem="gmW-Al-udG" firstAttribute="centerX" secondItem="sJD-X5-ABn" secondAttribute="centerX" id="qV9-dl-SGY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vFn-bh-xFP" secondAttribute="trailing" constant="4" id="tbj-Sp-enJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="c3y-Vy-Lnq"/>
+                    <connections>
+                        <outlet property="contactNameTextField" destination="nSc-Td-uOM" id="w2s-b6-Qd5"/>
+                        <outlet property="contactNumberTextField" destination="8os-f6-aXT" id="IUM-XN-L31"/>
+                        <outlet property="descriptionLabel" destination="hfq-r8-G43" id="IUI-D8-hBf"/>
+                        <outlet property="nameTextField" destination="gao-TA-90Y" id="5rI-zm-Xg5"/>
+                        <outlet property="nextButton" destination="gmW-Al-udG" id="Hd3-1s-A67"/>
+                        <outlet property="titleLabel" destination="Cni-mI-LhZ" id="D94-cO-5KJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2088.8000000000002" y="134.48275862068968"/>
+        </scene>
+        <!--loggedIn-->
+        <scene sceneID="QIB-6y-alT">
+            <objects>
+                <viewController title="loggedIn" id="YkN-Lb-Un7" customClass="MainViewController" customModule="Sleepwalkers" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vf7-Tz-ylu"/>
+                        <viewControllerLayoutGuide type="bottom" id="yS7-pe-Xew"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="l2X-kT-r7W">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxa-VF-RER">
+                                <rect key="frame" x="87.5" y="188" width="200" height="200"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="AmZ-nU-C4C"/>
+                                    <constraint firstAttribute="height" constant="200" id="Bi3-KG-Nqw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="85"/>
+                                <state key="normal" title="☀️">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="mainButtonTapped:" destination="YkN-Lb-Un7" eventType="touchUpInside" id="FnU-dp-YNK"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="VTx-M8-52t">
+                                <rect key="frame" x="37.5" y="467" width="300" height="62"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3g-M9-4Sm">
+                                        <rect key="frame" x="125.5" y="0.0" width="49" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="20"/>
+                                        <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5CW-sR-OTN">
+                                        <rect key="frame" x="125.5" y="38.5" width="49" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="20"/>
+                                        <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="jfR-a0-JVr"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap before  😴" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hl4-cm-STS">
+                                <rect key="frame" x="87.5" y="413" width="200" height="21"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS-Italic" family="Trebuchet MS" pointSize="20"/>
+                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBs-hU-jX5">
+                                <rect key="frame" x="62" y="577" width="251" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1pi-45-Sw3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="18"/>
+                                <state key="normal" title="Send help from contact"/>
+                                <connections>
+                                    <action selector="getHelpButtonTapped:" destination="YkN-Lb-Un7" eventType="touchUpInside" id="dQ8-Y9-gP3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VTx-M8-52t" firstAttribute="top" secondItem="oxa-VF-RER" secondAttribute="bottom" constant="79" id="30r-4d-R91"/>
+                            <constraint firstItem="hl4-cm-STS" firstAttribute="trailing" secondItem="oxa-VF-RER" secondAttribute="trailing" id="9NO-wV-M27"/>
+                            <constraint firstItem="VTx-M8-52t" firstAttribute="top" secondItem="hl4-cm-STS" secondAttribute="bottom" constant="33" id="GWz-My-fHX"/>
+                            <constraint firstItem="oxa-VF-RER" firstAttribute="top" secondItem="Vf7-Tz-ylu" secondAttribute="bottom" constant="124" id="Y7b-PV-NZd"/>
+                            <constraint firstItem="mBs-hU-jX5" firstAttribute="centerX" secondItem="VTx-M8-52t" secondAttribute="centerX" id="bc5-cz-ugi"/>
+                            <constraint firstItem="hl4-cm-STS" firstAttribute="leading" secondItem="oxa-VF-RER" secondAttribute="leading" id="cBR-sD-ZFu"/>
+                            <constraint firstItem="mBs-hU-jX5" firstAttribute="top" secondItem="VTx-M8-52t" secondAttribute="bottom" constant="48" id="epE-Ak-9y1"/>
+                            <constraint firstItem="oxa-VF-RER" firstAttribute="centerX" secondItem="l2X-kT-r7W" secondAttribute="centerX" id="h0f-pi-Deo"/>
+                            <constraint firstItem="yS7-pe-Xew" firstAttribute="top" secondItem="mBs-hU-jX5" secondAttribute="bottom" constant="60" id="iFD-Lj-Ims"/>
+                            <constraint firstItem="hl4-cm-STS" firstAttribute="top" secondItem="oxa-VF-RER" secondAttribute="bottom" constant="25" id="lZR-j7-aKj"/>
+                            <constraint firstItem="mBs-hU-jX5" firstAttribute="leading" secondItem="l2X-kT-r7W" secondAttribute="leadingMargin" constant="46" id="qQz-hp-8V3"/>
+                            <constraint firstItem="VTx-M8-52t" firstAttribute="centerX" secondItem="l2X-kT-r7W" secondAttribute="centerX" id="qnf-zb-647"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="35U-bv-foz">
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="XQX-dz-RDk">
+                            <connections>
+                                <segue destination="TWu-mp-tQV" kind="unwind" identifier="modifyContact" unwindAction="unwindToViewController:" id="SCJ-tT-GC7"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="How to user" id="iIY-A1-xhj">
+                            <connections>
+                                <segue destination="sBO-ax-38J" kind="show" identifier="toInfo" id="th7-jp-7PU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="contactNumber" destination="5CW-sR-OTN" id="Lhq-7D-oNU"/>
+                        <outlet property="mainButton" destination="oxa-VF-RER" id="8xA-1d-j4P"/>
+                        <outlet property="nameOfContactTextField" destination="O3g-M9-4Sm" id="O4z-Nu-LAa"/>
+                        <outlet property="sleepModeLabel" destination="hl4-cm-STS" id="6zr-eV-97O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vNx-D4-XQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="TWu-mp-tQV" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3037.5999999999999" y="106.59670164917542"/>
+        </scene>
+        <!--Info View Controller-->
+        <scene sceneID="2wv-Nx-SX5">
+            <objects>
+                <viewController id="sBO-ax-38J" customClass="InfoViewController" customModule="Sleepwalkers" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="X5q-1d-8hN"/>
+                        <viewControllerLayoutGuide type="bottom" id="tbh-rJ-ZaY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mj9-J4-hru">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9lT-M0-Pd7">
+                                <rect key="frame" x="141" y="556" width="93" height="32"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="93" id="8Of-ND-bXf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="17"/>
+                                <state key="normal" title="Got it!">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="eWe-QG-7u8" kind="unwind" identifier="gotIt" unwindAction="unwindToViewController:" id="EME-aA-5TK"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⏱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYX-r1-qL9">
+                                <rect key="frame" x="39" y="424" width="56" height="76"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="U5B-dp-mPP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="☀️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IC2-Rv-bIm">
+                                <rect key="frame" x="39" y="257" width="56" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="EPL-on-Tmg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yCc-MV-B3C">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="229"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XzM-Qg-n8L">
+                                        <rect key="frame" x="61" y="113" width="253" height="98"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to use Sleepwalkers?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bui-0u-tgD">
+                                                <rect key="frame" x="0.0" y="0.0" width="253" height="26"/>
+                                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="22"/>
+                                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="the main button has three stages                       " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gfn-F0-Jmt">
+                                                <rect key="frame" x="0.0" y="26" width="253" height="72"/>
+                                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="XzM-Qg-n8L" secondAttribute="trailing" constant="61" id="5Mf-1U-72d"/>
+                                    <constraint firstItem="XzM-Qg-n8L" firstAttribute="top" secondItem="yCc-MV-B3C" secondAttribute="top" constant="113" id="HVe-Ug-tS2"/>
+                                    <constraint firstAttribute="bottom" secondItem="XzM-Qg-n8L" secondAttribute="bottom" constant="18" id="TdC-Nu-9ok"/>
+                                    <constraint firstItem="XzM-Qg-n8L" firstAttribute="leading" secondItem="yCc-MV-B3C" secondAttribute="leading" constant="61" id="gTN-dz-BsS"/>
+                                    <constraint firstItem="XzM-Qg-n8L" firstAttribute="centerX" secondItem="yCc-MV-B3C" secondAttribute="centerX" id="o3t-gD-aLF"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We are waking you up and you can turn the alarm off by tapping the button, sleep mode is then turned on!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="My7-DG-uBN">
+                                <rect key="frame" x="103" y="418" width="246" height="89"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="89" id="0An-YG-LtL"/>
+                                    <constraint firstAttribute="width" constant="246" id="KBl-JT-UJL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sleep mode is on, we are tracking your location and will wake you up if you sleepwalked! Keep phone in your pocket." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVh-D8-9dv">
+                                <rect key="frame" x="104" y="307" width="250" height="111"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="111" id="QRV-dQ-yQV"/>
+                                    <constraint firstAttribute="width" constant="250" id="Tsj-eb-oo9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sleep mode is off, we are not tracking your current location!                            " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgC-cD-gtd">
+                                <rect key="frame" x="104" y="261" width="245" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="CM4-vd-ev8"/>
+                                    <constraint firstAttribute="width" constant="245" id="tKw-HP-ral"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🌙" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ltR-iL-Rnb">
+                                <rect key="frame" x="39" y="324" width="54" height="76"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="xe0-WO-Kx8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tYX-r1-qL9" firstAttribute="centerY" secondItem="My7-DG-uBN" secondAttribute="centerY" id="0rV-VK-ecu"/>
+                            <constraint firstItem="9lT-M0-Pd7" firstAttribute="centerX" secondItem="mj9-J4-hru" secondAttribute="centerX" id="5nD-ae-PUC"/>
+                            <constraint firstItem="ltR-iL-Rnb" firstAttribute="leading" secondItem="mj9-J4-hru" secondAttribute="leadingMargin" constant="23" id="6Md-BD-feL"/>
+                            <constraint firstItem="9lT-M0-Pd7" firstAttribute="top" secondItem="My7-DG-uBN" secondAttribute="bottom" constant="49" id="7Jn-2S-gp8"/>
+                            <constraint firstItem="ltR-iL-Rnb" firstAttribute="leading" secondItem="tYX-r1-qL9" secondAttribute="leading" id="8Rp-Hf-iiH"/>
+                            <constraint firstItem="tYX-r1-qL9" firstAttribute="top" secondItem="ltR-iL-Rnb" secondAttribute="bottom" constant="24" id="8Sb-xt-Dre"/>
+                            <constraint firstItem="tbh-rJ-ZaY" firstAttribute="top" secondItem="9lT-M0-Pd7" secondAttribute="bottom" constant="79" id="EX4-hi-Ici"/>
+                            <constraint firstItem="ltR-iL-Rnb" firstAttribute="top" secondItem="IC2-Rv-bIm" secondAttribute="bottom" constant="7" id="FVP-IG-jgc"/>
+                            <constraint firstItem="qgC-cD-gtd" firstAttribute="centerY" secondItem="IC2-Rv-bIm" secondAttribute="centerY" id="G83-90-N0O"/>
+                            <constraint firstItem="yCc-MV-B3C" firstAttribute="leading" secondItem="mj9-J4-hru" secondAttribute="leading" id="GD5-Z2-B1f"/>
+                            <constraint firstItem="IC2-Rv-bIm" firstAttribute="leading" secondItem="mj9-J4-hru" secondAttribute="leadingMargin" constant="24" id="KhO-hA-p7e"/>
+                            <constraint firstItem="qgC-cD-gtd" firstAttribute="top" secondItem="yCc-MV-B3C" secondAttribute="bottom" constant="32" id="MNm-Yg-cbH"/>
+                            <constraint firstItem="9lT-M0-Pd7" firstAttribute="centerX" secondItem="yCc-MV-B3C" secondAttribute="centerX" id="Ona-Aa-6C8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="My7-DG-uBN" secondAttribute="trailing" constant="10" id="VO1-aO-cpV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XVh-D8-9dv" secondAttribute="trailing" constant="5" id="gkg-qa-7ZF"/>
+                            <constraint firstItem="qgC-cD-gtd" firstAttribute="top" secondItem="yCc-MV-B3C" secondAttribute="bottom" constant="32" id="kVS-gz-gZX"/>
+                            <constraint firstItem="tbh-rJ-ZaY" firstAttribute="top" secondItem="tYX-r1-qL9" secondAttribute="bottom" constant="167" id="mRp-Sz-XBE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qgC-cD-gtd" secondAttribute="trailing" constant="10" id="mtE-EO-NXK"/>
+                            <constraint firstItem="My7-DG-uBN" firstAttribute="top" secondItem="XVh-D8-9dv" secondAttribute="bottom" id="paT-Ao-fjZ"/>
+                            <constraint firstItem="yCc-MV-B3C" firstAttribute="top" secondItem="mj9-J4-hru" secondAttribute="top" id="s4S-5I-asc"/>
+                            <constraint firstItem="My7-DG-uBN" firstAttribute="leading" secondItem="tYX-r1-qL9" secondAttribute="trailing" constant="8" symbolic="YES" id="ubi-zt-MVs"/>
+                            <constraint firstItem="IC2-Rv-bIm" firstAttribute="top" secondItem="yCc-MV-B3C" secondAttribute="bottom" constant="28" id="v6B-TN-wpZ"/>
+                            <constraint firstItem="qgC-cD-gtd" firstAttribute="trailing" secondItem="My7-DG-uBN" secondAttribute="trailing" id="zfe-NQ-Zu3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2Jl-ex-6NQ"/>
+                    <connections>
+                        <outlet property="button" destination="9lT-M0-Pd7" id="7dj-i3-fAP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3I2-34-u2G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="eWe-QG-7u8" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3885.5999999999999" y="106.59670164917542"/>
+        </scene>
+        <!--Initial View Controller-->
+        <scene sceneID="lnt-aO-e61">
+            <objects>
+                <viewController id="KPa-Dh-Yfw" customClass="InitialViewController" customModule="Sleepwalkers" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6qC-Cb-fos"/>
+                        <viewControllerLayoutGuide type="bottom" id="fpv-CE-URv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pHN-bW-wDl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4G8-PE-Kff">
+                                <rect key="frame" x="51" y="214" width="272" height="105"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Sleepwalkers" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PY5-Nc-EXF">
+                                        <rect key="frame" x="4" y="0.0" width="264" height="105"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="35"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.24829548597335815" green="0.70425444841384888" blue="0.98550087213516235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="PY5-Nc-EXF" firstAttribute="leading" secondItem="4G8-PE-Kff" secondAttribute="leadingMargin" constant="-4" id="TDK-Md-hFQ"/>
+                                    <constraint firstItem="PY5-Nc-EXF" firstAttribute="top" secondItem="4G8-PE-Kff" secondAttribute="top" id="k8e-WH-93S"/>
+                                    <constraint firstItem="PY5-Nc-EXF" firstAttribute="centerY" secondItem="4G8-PE-Kff" secondAttribute="centerY" id="v9r-PF-hdh"/>
+                                    <constraint firstItem="PY5-Nc-EXF" firstAttribute="trailing" secondItem="4G8-PE-Kff" secondAttribute="trailingMargin" constant="4" id="yzn-9L-SfP"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="APg-BO-tXg">
+                                <rect key="frame" x="130" y="378" width="114" height="42"/>
+                                <color key="backgroundColor" red="0.31447619199999999" green="0.68990415329999999" blue="0.97651195530000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="OMp-8t-erz"/>
+                                    <constraint firstAttribute="height" constant="42" id="scP-QM-xXM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="20"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="profileSegue" id="alJ-Es-yhc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4G8-PE-Kff" firstAttribute="top" secondItem="6qC-Cb-fos" secondAttribute="bottom" constant="150" id="2uF-aV-jVy"/>
+                            <constraint firstItem="APg-BO-tXg" firstAttribute="top" secondItem="4G8-PE-Kff" secondAttribute="bottom" constant="59" id="ALp-TR-6eY"/>
+                            <constraint firstItem="4G8-PE-Kff" firstAttribute="centerX" secondItem="APg-BO-tXg" secondAttribute="centerX" constant="-0.5" id="No4-Iw-7Q3"/>
+                            <constraint firstItem="APg-BO-tXg" firstAttribute="centerX" secondItem="pHN-bW-wDl" secondAttribute="centerX" id="UrU-Um-8XG"/>
+                            <constraint firstItem="4G8-PE-Kff" firstAttribute="leading" secondItem="pHN-bW-wDl" secondAttribute="leadingMargin" constant="35" id="bhq-mB-jHs"/>
+                            <constraint firstItem="fpv-CE-URv" firstAttribute="top" secondItem="APg-BO-tXg" secondAttribute="bottom" constant="247" id="yLI-Ql-vGf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="fP5-hN-ARk"/>
+                    <connections>
+                        <outlet property="labelView" destination="4G8-PE-Kff" id="3ce-xL-x19"/>
+                        <outlet property="nextButton" destination="APg-BO-tXg" id="jKL-2W-guh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sfg-Rc-hFm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1103.2" y="135.38230884557723"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ObS-M7-qQk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dqX-Fb-NDD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EU6-dh-ZsQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KPa-Dh-Yfw" kind="relationship" relationship="rootViewController" id="SjT-pM-Mzh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8eP-la-jIO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="164" y="135.38230884557723"/>
+        </scene>
+    </scenes>
+</document>
