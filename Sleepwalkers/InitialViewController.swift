@@ -15,14 +15,23 @@ class InitialViewController: UIViewController{
     
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var labelView: UIView!
-    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     //Functions
+    
+    
+    @IBAction func nextButtonTapped(_ sender: Any) {
+        if let name = defaults.string(forKey: "name") {
+            performSegue(withIdentifier: "toMainController", sender: self)
+        } else {
+            performSegue(withIdentifier: "signUpSegue", sender: self)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         nextButton.layer.cornerRadius = 15
-        labelView.layer.cornerRadius = 15
-        
     }
 }

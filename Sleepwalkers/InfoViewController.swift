@@ -10,24 +10,24 @@ import UIKit
 
 class InfoViewController: UIViewController {
     
+    //MARK: - Properties
     @IBOutlet weak var button: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         button.layer.cornerRadius = 15
-        
-        // Do any additional setup after loading the view.
     }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    //MARK: - Class Functions
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == "gotIt"{
-            return true
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        self.dismiss(animated: true) {
         }
-        return false
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
@@ -37,14 +37,14 @@ class InfoViewController: UIViewController {
             }
         }
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
+    //MARK: - Segue function
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "gotIt"{
+            return true
+        }
+        return false
+    }
     
 }

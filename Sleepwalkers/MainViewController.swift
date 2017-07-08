@@ -13,9 +13,10 @@ import AVFoundation
 import MessageUI
 import AddressBookUI
 import CoreMotion
+import AudioToolbox
 
 class MainViewController : UIViewController, MFMessageComposeViewControllerDelegate {
-    
+
     //MARK: - Serious Properties
     let locationManager = CLLocationManager()
     var currentLocation = CLLocationCoordinate2D()
@@ -25,19 +26,29 @@ class MainViewController : UIViewController, MFMessageComposeViewControllerDeleg
     var location = ""
     let pedoMeter = CMPedometer()
     let activityManager = CMMotionActivityManager()
-    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     //MARK: - Emoji Properties
     let sunEmoji = "☀️"
     let moonEmoji = "🌙"
-    let clockEmoji = "⏱"
+    let clockEmoji = "⏰"
+    let tiffanyColor = UIColor(red: 82, green: 225, blue: 192, alpha: 1)
+    let navyColor = UIColor(red: 2, green: 23, blue: 51, alpha: 1)
+    let darkGrayColor = UIColor(red: 235, green: 235, blue: 235, alpha: 1)
+    let lightGrayColor = UIColor(red: 251, green: 251, blue: 251, alpha: 1)
     
     //MARK: - IBOutlet Properties
+    
+    @IBOutlet weak var settingButton: UIButton!
+    @IBOutlet weak var infoButton: UIButton!
+    @IBOutlet weak var sendMessageButton: UIButton!
     @IBOutlet weak var nameOfContactTextField: UILabel!
     @IBOutlet weak var contactNumber: UILabel!
     @IBOutlet weak var sleepModeLabel: UILabel!
     @IBOutlet weak var mainButton: UIButton!
-    
+    @IBOutlet weak var backgroundView: UIView!
     var steps = 0
     
     
@@ -47,7 +58,7 @@ class MainViewController : UIViewController, MFMessageComposeViewControllerDeleg
         let location = CLLocation(latitude: latitude, longitude: longitude)
         CLGeocoder().reverseGeocodeLocation(location) { (placemarks, error) -> Void in
             if error != nil{
-                print(error)
+                print(error as Any)
                 return
             } else if (placemarks?.count)! > 0 {
                 let pm = placemarks![0]
@@ -66,6 +77,16 @@ class MainViewController : UIViewController, MFMessageComposeViewControllerDeleg
         }
     }
     
+    
+    @IBAction func settingButtonTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: "modifyContact", sender: self)
+    }
+    
+    @IBAction func infoButtonTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: "toInfo", sender: self)
+    }
+    
+    
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
         controller.dismiss(animated: true, completion: nil)
     }
@@ -73,12 +94,6 @@ class MainViewController : UIViewController, MFMessageComposeViewControllerDeleg
     @IBAction func getHelpButtonTapped(_ sender: UIButton) {
         let location = getLocation(manager: locationManager)
         reverseGeocoding(latitude: location.latitude, longitude: location.longitude)
-        //}
-    }
-    
-    //MARK: - Unwind and view did load actions
-    
-    @IBAction func unwindToViewController(_ segue: UIStoryboardSegue){
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
@@ -93,7 +108,7 @@ class MainViewController : UIViewController, MFMessageComposeViewControllerDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainButton.layer.cornerRadius = 100
+        self.sendMessageButton.layer.cornerRadius = 15
         
         nameOfContactTextField.text = "Contact Name: " + ( defaults.string(forKey: "contactName"))!
         contactNumber.text = "Contact Number: " + ( defaults.string(forKey: "contactNumber"))!
@@ -117,8 +132,13 @@ class MainViewController : UIViewController, MFMessageComposeViewControllerDeleg
             isRinging = false
             isGettingLocation = false
             mainButton.setAttributedTitle(NSAttributedString(string: sunEmoji), for: .normal)
-            mainButton.backgroundColor = UIColor.blue
-            self.sleepModeLabel.text = "Tap before 😴"
+            self.backgroundView.layer.backgroundColor = lightGrayColor.cgColor
+            self.settingButton.setTitleColor(darkGrayColor, for: .normal)
+            self.contactNumber.textColor = darkGrayColor
+            self.nameOfContactTextField.textColor = darkGrayColor
+            self.sleepModeLabel.textColor = darkGrayColor
+            self.infoButton.setTitleColor(darkGrayColor, for: .normal)
+            self.sleepModeLabel.text = "Tap before Sleeping"
         }
         
         if isGettingLocation {
@@ -126,17 +146,28 @@ class MainViewController : UIViewController, MFMessageComposeViewControllerDeleg
             avPlayer?.stop()
             isRinging = false
             mainButton.setAttributedTitle(NSAttributedString(string: sunEmoji), for: .normal)
-            mainButton.backgroundColor = UIColor.blue
-            self.sleepModeLabel.text = "Tap before 😴"
+            self.backgroundView.backgroundColor = lightGrayColor
+            self.sleepModeLabel.text = "Tap before Sleeping"
+            self.backgroundView.backgroundColor = lightGrayColor
+            self.settingButton.setTitleColor(darkGrayColor, for: .normal)
+            self.contactNumber.textColor = darkGrayColor
+            self.nameOfContactTextField.textColor = darkGrayColor
+            self.sleepModeLabel.textColor = darkGrayColor
+            self.infoButton.setTitleColor(darkGrayColor, for: .normal)
+            
             
         } else {
             isGettingLocation = true
             avPlayer?.stop()
             mainButton.setAttributedTitle(NSAttributedString(string: moonEmoji), for: .normal)
-            mainButton.backgroundColor = UIColor.black
-            _ = Timer.scheduledTimer(timeInterval: 10, target: self, selector: Selector("detectSteps"), userInfo: nil, repeats: true)
-            self.sleepModeLabel.text = "Tap when awake 🛌"
-            
+            _ = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(MainViewController.detectSteps), userInfo: nil, repeats: true)
+            self.backgroundView.backgroundColor = navyColor
+            self.sleepModeLabel.text = "Tap when Awake"
+            self.settingButton.setTitleColor(lightGrayColor, for: .normal)
+            self.contactNumber.textColor = lightGrayColor
+            self.nameOfContactTextField.textColor = lightGrayColor
+            self.sleepModeLabel.textColor = lightGrayColor
+            self.infoButton.setTitleColor(lightGrayColor, for: .normal)
         }
         
     }
@@ -153,15 +184,34 @@ class MainViewController : UIViewController, MFMessageComposeViewControllerDeleg
                 avPlayer = try AVAudioPlayer(contentsOf: url)
                 avPlayer.prepareToPlay()
                 avPlayer.play()
+                AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
+                AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
+                AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
+                AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
                 mainButton.setAttributedTitle(NSAttributedString(string: clockEmoji), for: .normal)
-                mainButton.backgroundColor = UIColor.white
                 isRinging = true
-                self.sleepModeLabel.text = "Tap to stop alarm ⏰"
+                self.sleepModeLabel.text = "Tap Alarm to Stop"
+                self.backgroundView.layer.backgroundColor = navyColor.cgColor
+                self.settingButton.setTitleColor(lightGrayColor, for: .normal)
+                self.contactNumber.textColor = lightGrayColor
+                self.nameOfContactTextField.textColor = lightGrayColor
+                self.sleepModeLabel.textColor = lightGrayColor
+                self.infoButton.setTitleColor(lightGrayColor, for: .normal)
                 
             } catch let error as NSError {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .denied {
+            let alertController = UIAlertController(title: "", message:
+                "Enable location services in settings for sleepwalkers to function properly", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+            self.present(alertController, animated: true, completion: nil)
+        }
+        
     }
     
     func getLocation(manager: CLLocationManager) -> CLLocationCoordinate2D {

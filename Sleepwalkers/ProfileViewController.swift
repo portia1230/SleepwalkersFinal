@@ -21,31 +21,23 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var contactNameTextField: UITextField!
     @IBOutlet weak var contactNumberTextField: UITextField!
     @IBOutlet weak var nextButton: UIButton!
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    var name : String?
     
     
     
     //MARK: - Functions
     
-    @IBAction func unwindToViewController(_ segue: UIStoryboardSegue){
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //segue to main controller if name was entered
-        let name = defaults.string(forKey: "name")
-        if let name = name{
-            // performSegue(withIdentifier: "goToMainSegue", sender: self)
-            nextButton.setTitle("Confirm", for: .normal)
-            titleLabel.text = "Please Confirm your information"
-            
-        }
         
         nextButton.layer.cornerRadius = 15
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         if let name = defaults.string(forKey: "name"),
             let nameOfContact = defaults.string(forKey: "contactName"),
@@ -53,6 +45,7 @@ class ProfileViewController: UIViewController {
             nameTextField.text = name
             contactNameTextField.text = nameOfContact
             contactNumberTextField.text = number
+            self.name = name
         }
         
     }
@@ -63,11 +56,6 @@ class ProfileViewController: UIViewController {
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - save data in user defaults
@@ -82,6 +70,13 @@ class ProfileViewController: UIViewController {
             defaults.set(contactNumberTextField.text, forKey:"contactNumber")
             defaults.set(nameTextField.text, forKey:"name")
             defaults.set(contactNameTextField.text, forKey:"contactName")
+            
+            if self.name != ""{
+                self.dismiss(animated: true, completion: {
+                })
+            } else {
+            performSegue(withIdentifier: "showMainSegue", sender: self)
+            }
         }
     }
     
